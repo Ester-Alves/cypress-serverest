@@ -1,0 +1,14 @@
+{
+  "name": "cypress-serverest",
+  "version": "1.0.0",
+  "description": "Projeto de testes de ponta a ponta no ServeRest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ester Alves",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^15.13.1"
+  }
+}
