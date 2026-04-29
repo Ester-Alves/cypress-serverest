@@ -3,7 +3,7 @@
 ## Sobre o projeto
 
 Este projeto foi desenvolvido com o objetivo de praticar e demonstrar habilidades em automação de testes end-to-end utilizando o *Cypress*.
-Os testes simulam o comportamento real do usuário em um fluxo de navegação, garantindo que as principais funcionalidades da aplicação estejam funcionando corretamente.
+Os testes simulam o comportamento real do usuário em um fluxo de navegação e compras, cobrindo as principais funcionalidades disponíveis na aplicação.
 
 ---
 
@@ -60,15 +60,29 @@ npx cypress run
 
 ## Testes implementados
 
-- Login e cadastro de usuário
+### Autenticação
+
+- Login de usuário
+
+### Navegação
+
+- Acesso à lista de compras
+- Retorno à página inicial
+
+### Fluxo de Compras
+
+- Adicionar produto pela página inicial
+- Acessar lista de compras
+- Limpar lista de compras
+- Visualizar detalhes do produto
+- Adicionar produto pela página de detalhes
 - Navegação entre páginas
-- Validação de elementos na tela
 
 ---
 
 ## Observações
 
-- O teste de fluxo de compras ainda está em desenvolvimento e não foi incluído neste repositório no momento.
+- A funcionalidade de carrinho ainda está em desenvolvimento na aplicação e não faz parte dos testes automatizados neste momento.
 
 ---
 
