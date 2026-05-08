@@ -19,20 +19,19 @@ O projeto utiliza o padrão Page Object Model (POM) para melhorar a organizaçã
 
 ## Estrutura do projeto
 
+```bash
 cypress/
-
-├── e2e/             # Testes automatizados
-├── fixtures/        # Dados mockados
-├── support/         # Comandos customizados e configurações
-├── pages/           
-    ├── auth/        # Páginas de autenticação
-    ├── components   # Componentes reutilizáveis
-    ├──  ...         # Demais páginas da aplicação
-
+├── e2e/                 # Testes automatizados
+├── fixtures/            # Dados mockados
+├── support/             # Comandos customizados e configurações
+├── pages/
+│   ├── auth/            # Páginas de autenticação
+│   ├── components/      # Componentes reutilizáveis
+│   └── ...              # Demais páginas da aplicação
+│
 docs/
-
-├── casos-de-teste-e2e.xlsx     # Documentação dos testes
-
+└── casos-de-teste-e2e.xlsx   # Documentação dos testes
+```
 ---
 
 ## Como executar o projeto
