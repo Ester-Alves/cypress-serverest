@@ -2,16 +2,18 @@
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido com o objetivo de praticar e demonstrar habilidades em automação de testes end-to-end utilizando o *Cypress*.
+Este projeto foi desenvolvido com o objetivo de praticar e demonstrar habilidades em automação de testes end-to-end utilizando o *Cypress*. 
 Os testes simulam o comportamento real do usuário em um fluxo de navegação e compras, cobrindo as principais funcionalidades disponíveis na aplicação.
+O projeto utiliza o padrão Page Object Model (POM) para melhorar a organização, reutilização e manutenção dos testes automatizados.
 
 ---
 
-## Tecnologias utilizadas
+## Tecnologias/práticas utilizadas
 
 - JavaScript
 - Cypress
 - Node.js
+- Page Object Model (POM)
 
 ---
 
@@ -20,11 +22,12 @@ Os testes simulam o comportamento real do usuário em um fluxo de navegação e 
 cypress/
 
 ├── e2e/             # Testes automatizados
-
 ├── fixtures/        # Dados mockados
-
 ├── support/         # Comandos customizados e configurações
-
+├── pages/           
+    ├── auth/        # Páginas de autenticação
+    ├── components   # Componentes reutilizáveis
+    ├──  ...         # Demais páginas da aplicação
 
 docs/
 
@@ -62,7 +65,7 @@ npx cypress run
 
 ### Autenticação
 
-- Login de usuário
+- Cadastro e login de usuário
 
 ### Navegação
 
@@ -82,7 +85,7 @@ npx cypress run
 
 ## Observações
 
-- A funcionalidade de carrinho ainda está em desenvolvimento na aplicação e não faz parte dos testes automatizados neste momento.
+- A funcionalidade de carrinho ainda não está disponível na aplicação utilizada para os testes, portanto não foi incluída na automação do projeto.
 
 ---
 

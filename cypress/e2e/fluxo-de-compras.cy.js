@@ -1,4 +1,9 @@
 /// <reference types="cypress" />
+import header from "../pages/components/header"
+import loginPage from "../pages/auth/loginPage"
+import homePage from "../pages/homePage"
+import listaComprasPage from "../pages/listaComprasPage"
+import produtoPage from "../pages/produtoPage"
 
 describe('fluxo de compras', () => {
 
@@ -6,44 +11,48 @@ describe('fluxo de compras', () => {
         cy.createUser().then((user) => {
             this.user = user
 
-            cy.login(user.email, user.password)
+            loginPage.acessarPagina()
+            loginPage.fazerLogin(user.email, user.password)
         })
         cy.get('[data-testid="logout"]')
             .should('be.visible')
+        cy.validarUrl('/home')
     })
 
     it('adiciona produto na lista pela página inicial', function () {
-        cy.adicionaProdutoNaLista('Samsung 60 polegadas')
+        homePage.adicionarProduto('Samsung 60 polegadas')
     })
 
     it('acessa lista de compras', function () {
-        cy.acessaLista()
+        header.acessarListaCompras()
     })
 
     it('limpa lista de compras', function () {
-        cy.adicionaProdutoNaLista('Logitech MX Vertical')
-        cy.get('[data-testid="limparLista"]')
-            .click()
-        cy.get('[data-testid="shopping-cart-empty-message"]')
-            .should('be.visible')
+        homePage.adicionarProduto('Samsung 60 polegadas')
+        listaComprasPage.limparLista()
     })
 
     it('da lista de compras retorna à página inicial', function () {
-        cy.acessaLista()
-        cy.voltaParaHome()
+        header.acessarListaCompras()
+        listaComprasPage.clicarPaginaInicial()
     })
 
     it('exibe detalhes do produto', function () {
-        cy.acessaProduto('Logitech MX Vertica')
+        homePage.acessarProduto('Logitech MX Vertica')
     })
 
     it('adiciona produto na lista pela página de detalhes', function () {
-        cy.acessaProduto('Novo Produto da Lenovo')
-        cy.adicionaProdutoNoDetalhe('Novo Produto da Lenovo')
+        homePage.acessarProduto('Logitech MX Vertical')
+        produtoPage.adicionarProduto('Logitech MX Vertical')
     })
 
     it('da página de detalhes retorna à pagina inicial', function () {
-        cy.acessaProduto('TVZ Sampitoxiba')
-        cy.voltaParaHome()
+        homePage.acessarProduto('Samsung 60 polegadas')
+        produtoPage.clicarVoltar()
+    })
+
+    it('acessa página inicial pelo menu superior', function () {
+        header.acessarListaCompras()
+        header.acessarHome()
     })
 })
